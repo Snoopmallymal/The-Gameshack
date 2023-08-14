@@ -5,16 +5,7 @@
         <script src="https://kit.fontawesome.com/e4e3773aed.js" crossorigin="anonymous"></script>
         <script src="js/launcher.js"></script>
         <link rel="stylesheet" href="css/main.css">
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
-
-                /* Set the width of the side navigation to 0 */
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
-        </script>
+        <script src="/js/sidebar.js"></script>
     </head>
     <body>
         <div class="Header">
@@ -42,13 +33,13 @@
         <div class="main">
             <h1>S&C’s Gameshack 2.0 </h1> 
             <div class="grid">
-                <button onclick="launchGame('sites/paper-io/site.html')" class="item red">Paper IO</button>
+                <button onclick="launchGame('sites/paper-io/index.html')" class="item red">Paper IO</button>
                 <button onclick="launchGame('sites/minecraft/index.html')" class="item green">Minecraft</button>
                 <button onclick="window.alert('Ill Get there chill')" class="item blue">2048</button>
                 <button onclick="window.alert('Ill Get there chill')" class="item orange">Hextris</button>
                 <button onclick="window.alert('Ill Get there chill')" class="item purple">1v1 lol</button>
                 <button onclick="window.alert('Ill Get there chill')" class="item green">Snake</button>
-                <button onclick="window.alert('Ill Get there chill')" class="item red">Slope</button>
+                <button onclick="launchGame('sites/slope/index.html')" class="item red">Slope</button>
             </div>
         </div>
         <!-- Coolors Palette Widget 
