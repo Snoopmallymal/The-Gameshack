@@ -1,4 +1,5 @@
-@import url("_header.scss");
+@use '_header.scss';
+@use '_reset.scss';
 @font-face {
     font-family: Bebas Neue;
     src: url("/fonts/BebasNeue-Regular.ttf")
