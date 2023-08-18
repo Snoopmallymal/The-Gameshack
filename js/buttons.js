@@ -7,10 +7,14 @@ function gameFullscreen() {
 }
 
 function openHome() {
-    window.open("/index.html", "_self", "", "false")
+    window.open("/index.html", "_self", "", "false");
 }
 
 // Opens The News Page
 function openNews() {
-    window.open("path", "_blank", "", "false")
+    window.open("path", "_blank", "", "false");
+}
+
+function gameReload() {
+    document.getElementById('gameframe').src = document.getElementById('gameframe').src;
 }

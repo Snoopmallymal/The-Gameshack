@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/gamepage.css">
+        <script src="/js/buttons.js"></script>
+        <script src="/js/sidebar.js"></script>
+        <script>
+            function SlopegameFullscreen() {
+                // Get The Frame With The Game In It
+                let frame = document.getElementById("gameframe");
+
+                // Make It Fullscreen
+                frame.requestFullscreen();
+
+                document.getElementById('gameframe').src = document.getElementById('gameframe').src
+            }
+        </script>
+    </head>
+    <body>
+        <div class="Header">
+            <Button class="menu" onclick="openNav()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              </Button>
+            <button onclick="openHome()" class="hook">Home</button>
+            <button onclick="openNews()" class="hook">News</button>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">The</a>
+            <a href="#">Games</a>
+            <a href="#">Will</a>
+            <a href="#">Go</a>
+            <a href="#">Here</a>
+            <a href="#"></a>
+            <a href="#">The</a>
+            <a href="#">Games</a>
+            <a href="#">Will</a>
+            <a href="#">Go</a>
+            <a href="#">Here</a>
+          </div>
+          <div id="main">
+            <h1 style="text-align: center;">tic-tac-toe</h1>
+            <iframe width="60%" height="60%" id="gameframe" src="game.html" allowfullscreen="true"></iframe>
+            <div class="icon-holder">
+                <button onclick="gameReload()" class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                      </svg>                      
+                </button>
+                <button class="icon" onclick="gameFullscreen()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                </svg>
+                </button>
+            </div>
+            </div>
+    </body>
+</html>

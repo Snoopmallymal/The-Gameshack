@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #222;
+    }
+    canvas {
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const gridSize = 20;
+    const snake = [{ x: 9, y: 9 }];
+    let direction = 'right';
+    let food = generateFood();
+    let score = 0;
+
+    function generateFood() {
+      const foodX = Math.floor(Math.random() * gridSize);
+      const foodY = Math.floor(Math.random() * gridSize);
+      return { x: foodX, y: foodY };
+    }
+
+    function drawTile(x, y, color) {
+      ctx.fillStyle = color;
+      ctx.fillRect(x * gridSize, y * gridSize, gridSize, gridSize);
+      ctx.strokeStyle = 'black';
+      ctx.strokeRect(x * gridSize, y * gridSize, gridSize, gridSize);
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw snake
+      snake.forEach(segment => {
+        drawTile(segment.x, segment.y, 'green');
+      });
+
+      // Draw food
+      drawTile(food.x, food.y, 'red');
+
+      // Move snake
+      const headX = snake[0].x;
+      const headY = snake[0].y;
+      let newHead = { x: headX, y: headY };
+
+      if (direction === 'right') newHead.x++;
+      if (direction === 'left') newHead.x--;
+      if (direction === 'up') newHead.y--;
+      if (direction === 'down') newHead.y++;
+
+      snake.unshift(newHead);
+
+      // Check for collision with food
+      if (newHead.x === food.x && newHead.y === food.y) {
+        food = generateFood();
+        score += 10;
+      } else {
+        snake.pop();
+      }
+
+      // Check for collision with walls
+      if (newHead.x < 0 || newHead.x >= gridSize || newHead.y < 0 || newHead.y >= gridSize) {
+        clearInterval(gameLoop);
+      }
+
+      // Display score
+      ctx.fillStyle = 'white';
+      ctx.font = '20px Arial';
+      ctx.fillText('Score: ' + score, 10, 30);
+    }
+
+    function handleKey(event) {
+      const key = event.key;
+      if (key === 'ArrowUp' && direction !== 'down') direction = 'up';
+      if (key === 'ArrowDown' && direction !== 'up') direction = 'down';
+      if (key === 'ArrowLeft' && direction !== 'right') direction = 'left';
+      if (key === 'ArrowRight' && direction !== 'left') direction = 'right';
+    }
+
+    document.addEventListener('keydown', handleKey);
+
+    const gameLoop = setInterval(draw, 100);
+  </script>
+</body>
+</html>
