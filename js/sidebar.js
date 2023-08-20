@@ -6,3 +6,16 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+function sidebarlaunchGame(path) {
+    window.open(path, "_self", "", "false"	)
+}
+
+function sidebaropenHome() {
+    window.open("/index.html", "_self", "", "false");
+}
+
+// Opens The News Page
+function sidebaropenNews() {
+    window.open("path", "_blank", "", "false");
+}
