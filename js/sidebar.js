@@ -17,5 +17,5 @@ function sidebaropenHome() {
 
 // Opens The News Page
 function sidebaropenNews() {
-    window.open("path", "_blank", "", "false");
+    window.open("/news.html", "_blank", "", "false");
 }

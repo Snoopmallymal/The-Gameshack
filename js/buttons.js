@@ -12,7 +12,7 @@ function openHome() {
 
 // Opens The News Page
 function openNews() {
-    window.open("path", "_blank", "", "false");
+    window.open("/news.html", "_blank", "", "false");
 }
 
 function gameReload() {
