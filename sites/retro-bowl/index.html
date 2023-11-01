@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Retro Bowl | The Gameshack</title>
+        <link rel="stylesheet" href="/css/gamepage.css">
+        <script src="/js/buttons.js"></script>
+        <script src="/js/sidebar.js"></script>
+        <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+        <link rel="icon" type="image/png" href="/assets/favicon.png">
+    </head>
+    <body>
+        <div class="Header">
+            <Button class="menu" onclick="openNav()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              </Button>
+            <button onclick="openHome()" class="hook">Home</button>
+            <button onclick="openNews()" class="hook">News</button>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a onclick="sidebaropenHome()" href="#">Home</a>
+            <a onclick="sidebaropenNews()" href="#">News</a>
+            <a href="#"></a>
+            <a onclick="sidebarlaunchGame('/sites/paper-io/index.html')" href="#">paper-io</a>
+            <a onclick="sidebarlaunchGame('/sites/minecraft/index.html')" href="#">Minecraft</a>
+            <a onclick="sidebarlaunchGame('/sites/2048/index.html')" href="#">2048</a>
+            <a onclick="sidebarlaunchGame('/sites/hextris/index.html')" href="#">Hextris</a>
+            <a onclick="sidebarlaunchGame('/sites/tic-tac-toe/index.html')" href="#">Tic-Tac-Toe</a>
+            <a onclick="sidebarlaunchGame('/sites/snake/index.html')" href="#">Snake</a>
+            <a onclick="sidebarlaunchGame('/sites/slope/index.html')" href="#">Slope</a>
+          </div>
+          <div id="main">
+            <h1 style="text-align: center;">Retro Bowl</h1>
+            <iframe width="60%" height="60%" id="gameframe" src="game.html" allowfullscreen="true"></iframe>
+            <div class="icon-holder">
+                <button class="icon" onclick="gameFullscreen()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                </svg>
+                </button>
+            </div>
+            </div>
+    </body>
+</html>
